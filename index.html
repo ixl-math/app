@@ -24,6 +24,7 @@
     <title>Landon's App</title>
     <style>
         body{
+            touch-action: manipulation;
             text-align: center;
             overflow: hidden;
             -webkit-touch-callout: none; /* iOS Safari */
@@ -57,4 +58,9 @@
        window.location.href = 'load.html')
     }
        </script>
+     <script type="text/javascript">
+        document.addEventListener('touchmove', function (event) {
+          if (event.scale !== 1) { event.preventDefault(); }
+        }, { passive: false });
+        </script>
 </body>
