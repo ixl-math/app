@@ -24,7 +24,6 @@
     <title>Landon's App</title>
     <style>
         body{
-            touch-action: manipulation;
             text-align: center;
             overflow: hidden;
             -webkit-touch-callout: none; /* iOS Safari */
@@ -42,25 +41,37 @@
             font-family: sans-serif;
             font-size: 17px;
         }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: sans-serif;
+            border: 2px cadetblue;
+            background-color: cadetblue;
+            padding: 7px;
+            border-radius: 50px;
+        }
     </style>
 </head>
 <body>
     
 <img src="Icon-144.png">
-<p>Loading...</p>
-<script>
+<p id="p1">Loading...</p>
+       <script>
         window.onload = function(){
           setTimeout(loadAfterTime, 5000)
        };
-       
+
        //5000
        function loadAfterTime() { 
-       window.location.href = 'load.html')
+        var a = document.createElement('a');
+      var linkText = document.createTextNode("Click Here");
+      a.appendChild(linkText);
+      a.title = "click here";
+      a.href = "load.html";
+      document.body.appendChild(a);
+      document.getElementById("p1").innerHTML = "Loaded!!!";
+
     }
        </script>
-     <script type="text/javascript">
-        document.addEventListener('touchmove', function (event) {
-          if (event.scale !== 1) { event.preventDefault(); }
-        }, { passive: false });
-        </script>
 </body>
