@@ -25,8 +25,8 @@
     <style>
         body{
             margin: 0;
-             overflow:hidden;
             text-align: center;
+            overflow: hidden;
             -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -67,8 +67,8 @@
 <img id="demo" src="Icon-144.png">
 <br><br>
 <p id="p1">Loading...</p>
-
-    </div>
+</div>
+    
        <script>
         window.onload = function(){
           setTimeout(loadAfterTime, 3000)
@@ -87,8 +87,10 @@
        //5000
        function loadAfterTime() { 
         var iframe = document.createElement('iframe');
-        iframe.src = 'load.html';
+        iframe.src = 'index.html';
         document.body.appendChild(iframe);
+        const element = document.getElementById("demo");
+  element.remove();
     }
        </script>
        <script>
